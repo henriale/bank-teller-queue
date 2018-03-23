@@ -1,4 +1,6 @@
 public class Client {
+    public static final int SENIORITY_START_AGE = 65;
+
     private int age;
     private String name;
 

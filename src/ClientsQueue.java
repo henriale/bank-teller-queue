@@ -1,6 +1,8 @@
 import java.util.LinkedList;
 
 public class ClientsQueue {
+    private static final int MAX_PRIORITY_TELLER_COUNT = 5;
+
     private LinkedList<Client> clients;
     private LinkedList<Client> seniors;
 
@@ -10,7 +12,7 @@ public class ClientsQueue {
     }
 
     public void enqueue(Client c) {
-        if (c.getAge() > 65) {
+        if (c.getAge() > Client.SENIORITY_START_AGE) {
             this.seniors.addFirst(c);
         } else {
             this.clients.addFirst(c);
@@ -18,7 +20,7 @@ public class ClientsQueue {
     }
 
     public Client dequeue(int teller) {
-        if (teller < 6) {
+        if (teller <= MAX_PRIORITY_TELLER_COUNT) {
             return this.seniors.removeLast();
         }
 

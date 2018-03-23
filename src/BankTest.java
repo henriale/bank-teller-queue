@@ -4,24 +4,17 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class BankTest {
-    ClientsQueue queue;
+    private ClientsQueue queue;
 
     @Before
     public void beforeTest() {
-        Client c1 = new Client("John", 20);
-        Client c2 = new Client("Maria", 50);
-        Client c3 = new Client("Alex", 70);
-        Client c4 = new Client("Martin", 18);
-        Client c5 = new Client("Luis", 31);
-        Client c6 = new Client("Megan", 60);
-
         queue = new ClientsQueue();
-        queue.enqueue(c1);
-        queue.enqueue(c2);
-        queue.enqueue(c3);
-        queue.enqueue(c4);
-        queue.enqueue(c5);
-        queue.enqueue(c6);
+        queue.enqueue(new Client("John", 20));
+        queue.enqueue(new Client("Maria", 50));
+        queue.enqueue(new Client("Alex", 70));
+        queue.enqueue(new Client("Martin", 18));
+        queue.enqueue(new Client("Luis", 31));
+        queue.enqueue(new Client("Megan", 60));
     }
 
     @org.junit.Test
